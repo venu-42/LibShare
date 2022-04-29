@@ -38,15 +38,25 @@ const userSchema = mongoose.Schema({
     },
     DOB:Date,
     contact:[Number,'A phone number must be required'],
-    wishlist:{
-        type:String,
-    },
-    books:{
-        type:String,
-    },
-    rentedBooks:{
-        type:String,
-    }
+    wishlist:[
+        {
+            type:mongoose.Schema.ObjectId,
+            ref:'Book'
+        }
+    ]
+    ,
+    books:[
+        {
+            type:mongoose.Schema.ObjectId,
+            ref:'Book'
+        }
+    ],
+    rentedBooks:[
+        {
+            type:mongoose.Schema.ObjectId,
+            ref:'Book'
+        }
+    ]
 })
 
 //* the following middleware runs after the validators in schema ran
@@ -54,16 +64,7 @@ userSchema.pre('save',async function(next){
     if(!this.isModified('password')) return next();
 
     this.password = await bcrypt.hash(this.password,12)
-
-    //* confirmPassword is only used till mongoose not till mongoDB
-    //* below we can manipulate the object that is going to be saved
     this.confirmPassword = undefined
-    //* the unique validator present in email options is an option from mongoDB itself so mongoDB also validates it after this middleware
-    //* generally mongoose explicit validators are executed before pre-save hook
-    //* following is not accepted by mongoDB as undefined value is already present for email field
-    // this.email=undefined
-    //* following is accepted from mongoDB because unique is not set
-    // this.name=undefined
     next();
 })
 

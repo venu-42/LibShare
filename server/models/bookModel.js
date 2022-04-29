@@ -17,6 +17,17 @@ const bookSchema = mongoose.Schema({
         default:'/DP.jpg'
     },
     price:[Number,'Price must be required'],
+    rating:{
+        type:Number,
+        default:3
+    },
+    tags:[{
+        type:String
+    }],
+    owner:{
+        type:mongoose.Schema.ObjectId,
+        ref:'User'
+    }
 })
 
 
