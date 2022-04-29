@@ -3,6 +3,8 @@ const express = require('express');
 const morgan = require('morgan')
 const bookRouter = require('./routes/bookRoutes')
 const userRouter = require('./routes/userRoutes');
+const AppError = require('./utils/appError');
+const GlobalErrorHandler = require('./controllers/errorControllers')
 
 const app = express();
 
@@ -22,20 +24,20 @@ app.use((req,res,next)=>{
 
 
 // Routers
-// app.use('/api/v1/tours',tourRouter);
-// app.use('/api/v1/users',userRouter);
+app.use('/api/v1/books',bookRouter);
+app.use('/api/v1/users',userRouter);
 
 
 // Handle all other routes (since its a API we will send only json responses)
-// app.all('*',(req,res,next)=>{
-//     // res.status(404).json({
-//     //     status:"fail",
-//     //     message:`The requested URL ${req.originalUrl} is not found`
-//     // })
-//     next(new AppError(`The requested URL ${req.originalUrl} is not found`,404))
-// })
+app.all('*',(req,res,next)=>{
+    // res.status(404).json({
+    //     status:"fail",
+    //     message:`The requested URL ${req.originalUrl} is not found`
+    // })
+    next(new AppError(`The requested URL ${req.originalUrl} is not found`,404))
+})
 
-// app.use(GlobalErrorHandler)
+app.use(GlobalErrorHandler)
 
 
 module.exports= app;
