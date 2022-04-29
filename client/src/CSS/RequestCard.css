@@ -1,0 +1,27 @@
+.cardOuterDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+}
+.imgDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detailsDiv{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.detailsDivInner{
+    font-size: 12px;
+    margin: 2px;
+    margin-left:2px
+}
+.connectDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

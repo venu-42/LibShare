@@ -4,8 +4,14 @@ import UserPic from "../media/images/user1.jpg";
 import NavBar from "../Components/NavBar";
 import BookPic from "../media/books/RDPD.webp";
 import Button from '@mui/material/Button';
-
+import RequestCard from "../Components/RequestCard";
 const BookDetails = () => {
+  const owners = [
+    { Name: "M.Sushanth Kumar", Email: "sushanthkumar870@gmail.com", Phone: "7896541235",Address: "aosubciv fuvhauisnsbdsvnus fcasbvbcsib" },
+    { Name: "S.Venugopal Reddy ", Email: "venugopalreddy04@gmail.com", Phone: "7896541235",Address: "fuvhauisnsbdsvnus fcasbvbcsib" },
+    { Name: "M.Sai Nethra", Email: "sainethra@gmail.com", Phone: "7896541235", Address: "aosubciv fcasbvbcsib"},
+    { Name: "S.Akhil", Email: "akhil@gmail.com", Phone: "7896541235",Address: "aosubciv" },
+  ];
   return (
     <div>
       <NavBar />
@@ -79,7 +85,7 @@ const BookDetails = () => {
         </div>
       </Card>
       <div>
-        <Card style={{ width: "70%",marginLeft: "auto",marginRight: "auto",marginTop:"20px"}}>
+        {/* <Card style={{ width: "70%",marginLeft: "auto",marginRight: "auto",marginTop:"20px"}}>
           <div style={{ display: "flex", flexDirection: "row",justifyContent: "center",alignItems: "center"}}>
             <div style={{ width: "20%",display: "flex", flexDirection: "row",justifyContent: "center",alignItems: "center"  }}>
               <img
@@ -127,8 +133,12 @@ const BookDetails = () => {
 
             </div>
           </div>
-        </Card>
-        
+        </Card> */}
+        {
+              owners.map(card =>(
+                <RequestCard Name={card.Name} Email={card.Email} Phone={card.Phone} Address={card.Address}/>
+              ))
+            }
       </div>
     </div>
   );

@@ -1,0 +1,47 @@
+.LoginBox{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.textBox{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 7% ;
+    margin-bottom: 5% ;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:50%;
+}
+
+.loginCard{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10% ;
+    width: 40%
+    
+}
+.loginText{
+    font-size: 18px;
+    margin-top: 7% ;
+    text-decoration: underline;
+    text-align: center;
+}
+.bottomOptions
+{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-left: auto;
+    margin-right:auto;
+    justify-content:space-between;
+    width:50%;
+    margin-bottom: 8% ;
+
+}
+.bottomOptions>div>a:hover{
+    color:red;
+    cursor:pointer;
+}

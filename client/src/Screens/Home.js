@@ -4,6 +4,14 @@ import Category from "../Components/Category";
 import NavBar from "../Components/NavBar";
 import landscape from "../media/books/landScape.jpg";
 const Home = () => {
+  const thrillerData = [
+    { Name: "Posted Internships", Author: "J.K.Rowling", Rating: "4/5" },
+    { Name: "Posted Internships", Author: "J.K.Rowling", Rating: "4/5" },
+    { Name: "Posted Internships", Author: "J.K.Rowling", Rating: "4/5" },
+    { Name: "Posted Internships", Author: "J.K.Rowling", Rating: "4/5" },
+    { Name: "Posted Internships", Author: "J.K.Rowling", Rating: "4/5" },
+    { Name: "Posted Internships", Author: "J.K.Rowling", Rating: "4/5" },
+  ];
   return (
     <>
       <NavBar />
@@ -24,10 +32,10 @@ const Home = () => {
         </div>
         <div>
           <Card>
-            <Category category="Frictional Books"/>
-            <Category category="Thriller Books"/>
-            <Category category="Love Stories"/>
-            <Category category="Top Rated"/>
+            <Category category="Frictional Books" data={thrillerData}/>
+            <Category category="Thriller Books" data={thrillerData}/>
+            <Category category="Love Stories" data={thrillerData}/>
+            <Category category="Top Rated" data={thrillerData}/>
           </Card>
         </div>
       </Card>
