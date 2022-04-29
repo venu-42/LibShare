@@ -1,0 +1,17 @@
+.candidate__navBar {
+    display: flex;
+    border-bottom: 1px solid #e5e5e5;
+    align-items:center;
+  }
+  .candidate__nav {
+    border: 2px solid transparent;
+    padding: 10px 0;
+    margin: 0 15px;
+    cursor:pointer;
+    /* width: fit-content; */
+  }
+ 
+  .candidate__nav.active-tab {
+    color:Red;
+    border-bottom: 2px solid red;
+  }
